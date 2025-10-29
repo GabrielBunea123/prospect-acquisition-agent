@@ -92,6 +92,10 @@ class LLMTracingSettings(BaseModel):
     enabled: bool = Field(default=False, description="Enable LLM Tracing")
 
 
+class ApolloAPISettings(BaseModel):
+    api_key: str = Field(description="Apollo API Key")
+
+
 class AppSettings(BaseSettings):
     """
     App Settings that can be overridden by env variables
@@ -124,6 +128,8 @@ class AppSettings(BaseSettings):
     logging: LoggingSettings = Field(default_factory=LoggingSettings)
 
     llm_tracing: LLMTracingSettings = Field(default_factory=LLMTracingSettings)
+
+    apollo_api: ApolloAPISettings = Field(default_factory=ApolloAPISettings)
 
 
 @lru_cache()

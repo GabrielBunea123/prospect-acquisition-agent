@@ -7,7 +7,10 @@ from src.prospect_acquisition_agent.api import lifespan
 from src.prospect_acquisition_agent.api.middleware import TraceIdMiddleware
 from src.prospect_acquisition_agent.api.routes import health
 from src.prospect_acquisition_agent.config.logging import get_logger
-from src.prospect_acquisition_agent.models.response import ApiResponseModel, ApiResponseItemModel
+from src.prospect_acquisition_agent.models.response import (
+    ApiResponseModel,
+    ApiResponseItemModel,
+)
 
 logger = get_logger(__name__)
 
@@ -15,7 +18,7 @@ logger = get_logger(__name__)
 app = FastAPI(
     title="ENP AI POC",
     summary="Engineering Platform AI POC",
-    # lifespan=lifespan,
+    lifespan=lifespan,
 )
 
 app.add_middleware(TraceIdMiddleware)

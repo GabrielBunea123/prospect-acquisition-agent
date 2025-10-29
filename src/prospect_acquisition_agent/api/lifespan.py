@@ -7,6 +7,7 @@ from src.prospect_acquisition_agent.helper.id_generator import generate_id
 
 logger = get_logger(__name__)
 
+
 @asynccontextmanager
 async def lifespan(app):
     """
