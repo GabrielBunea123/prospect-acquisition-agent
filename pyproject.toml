@@ -1,0 +1,46 @@
+[project]
+name = "prospect-acquisition-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "docling>=2.55.1",
+    "fastapi>=0.118.0",
+    "greenlet>=3.2.4",
+    "python-dotenv>=1.1.1",
+    "langchain>=0.3.27",
+    "langchain-community>=0.3.31",
+    "langchain-ollama>=0.3.8",
+    "langchain-openai>=0.3.33",
+    "langchain-postgres>=0.0.15",
+    "langchain-pymupdf4llm>=0.4.1",
+    "langfuse>=3.6.2",
+    "langgraph>=0.6.8",
+    "prometheus-client>=0.23.1",
+    "psycopg-binary>=3.2.10",
+    "pydantic-settings>=2.11.0",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
+    "starlette-exporter>=0.23.0",
+    "uvicorn>=0.37.0",
+    "uvloop>=0.21.0",
+]
+
+[dependency-groups]
+dev = [
+    "gradio>=5.49.1",
+    "langchain-chroma>=0.2.6",
+    "pytest-asyncio>=1.2.0",
+    "ruff>=0.13.2",
+]
+
+[tool.ruff]
+target-version = "py312"
+
+# ignore deprecated warnings for SWIG (Simplified Wrapper and Interface Generator) on Mac M1 / M2
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::DeprecationWarning:sys",
+    "ignore::DeprecationWarning:importlib._bootstrap"
+]
